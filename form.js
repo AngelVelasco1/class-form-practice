@@ -1,13 +1,21 @@
-class Lapiz {
+class Pencil {
     #marca
-    constructor({color= "Amarillo", dimension= 25, borrador= true, material="Madera", marca= "Norma" }) {
+    constructor({color= "#ffffff", dimension= 25, borrador= true, material="Madera", marca= "Norma" }) {
         this.color = color;
         this.dimension = dimension;
         this.borrador = borrador;
         this.material = material;
         this.#marca = marca;
     }
+    get color() {
+        return this.color;
+    }
 }
 
-let objeto = new Lapiz({material: "Goma", dimension: 10, borrador: false, marca: "FaberCastell"});
-console.log(objeto);
+let defaultPencil = undefined;
+let color = document.querySelector(`[name="color"]`);
+
+addEventListener("DOMContentLoaded", (e)=> {
+    defaultPencil = new Pencil({});
+    color.value = defaultPencil.color;
+})
