@@ -1,21 +1,59 @@
 class Pencil {
-    #marca
-    constructor({color= "#ffffff", dimension= 25, borrador= true, material="Madera", marca= "Norma" }) {
-        this.color = color;
-        this.dimension = dimension;
-        this.borrador = borrador;
-        this.material = material;
-        this.#marca = marca;
+    #defaultBrand
+    constructor({ color = "#ffffff", size = 20, eraser = true, material = "gum", brand = "Norma" }) {
+        this.defaultColor = color;
+        this.defaultSize = size;
+        this.defaultEraser = eraser;
+        this.defaultMaterial = material;
+        this.#defaultBrand = brand;
     }
+    /* Getters */
     get color() {
-        return this.color;
+        return this.defaultColor;
+    }
+    get size() {
+        return this.defaultSize;
+    }
+    get eraser() {
+        return this.defaultEraser;
+    }
+    get material() {
+        return this.defaultMaterial;
+    }
+    get brand() {
+        return this.#defaultBrand;
     }
 }
 
-let defaultPencil = undefined;
-let color = document.querySelector(`[name="color"]`);
+let defaultPencil;
+/* Each Property */
+let color = document.querySelector(`[name= "color"]`);
+let size = document.querySelector(`[name= "size"]`);
+let eraser = document.querySelector(`[name= "eraser"]`);
 
-addEventListener("DOMContentLoaded", (e)=> {
+defaultPencil = new Pencil({});
+
+let eraserFieldset = document.querySelector("#eraser-select")
+let defaultEraser = defaultPencil.eraser;
+let eraserInput = eraserFieldset.querySelector(`input[value= "${defaultEraser}"]`);
+
+let materialFieldset = document.querySelector("#material-select");
+let defaultMaterial = defaultPencil.material;
+let materialInput = materialFieldset.querySelector(`input[value= "${defaultMaterial}"]`);
+
+let brandFieldset = document.querySelector("#brand-select");
+let defaultBrand = defaultPencil.brand;
+let brandInput = brandFieldset.querySelector(`input[value= "${defaultBrand}"]`);
+
+
+/* DOM Loaded */
+addEventListener("DOMContentLoaded", (e) => {
     defaultPencil = new Pencil({});
+
     color.value = defaultPencil.color;
+    size.value = defaultPencil.size;
+    eraserInput.checked = true;
+    materialInput.checked = true;
+    brandInput.checked = true;
+
 })

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,32 +9,38 @@
     <script src="form.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <form id="form">
-        <input type="color" name="color" placeholder="Pencil Color">
-
-        <label for="">Dimention</label>
-        <input type="range" min="1" max="10" name="dimension">
-
         <fieldset>
-            <legend>Brand</legend>
-            <input type="radio" name="marca" value="Mongo"><label>Mongo</label>
-            <input type="radio" name="marca" value="Norma"><label>Norma</label>
-            <input type="radio" name="marca" value="Faber Castell"><label>Faber Castell</label>
-            <input type="radio" name="marca" value="Big"><label>Big</label>
+            <legend>Pencil Class</legend>
+            <input type="color" name="color" placeholder="Pencil Color"><br>
+
+            <label for="">Size</label>
+            <input type="range" min="1" max="20" name="size">
+
+            <fieldset id="brand-select">
+                <legend>Brand</legend>
+                <input type="radio" name="marca" value="Mongo"><label>Mongo</label><br>
+                <input type="radio" name="marca" value="Norma"><label>Norma</label><br>
+                <input type="radio" name="marca" value="Faber Castell"><label>Faber Castell</label><br>
+                <input type="radio" name="marca" value="Big"><label>Big</label>
+            </fieldset>
+
+            <fieldset id="eraser-select">
+                <legend>Eraser</legend>
+                <input type="radio" value="true" name="eraser"><label for="">Yes</label>
+                <input type="radio" value="false" name="eraser"><label for="">No</label>
+            </fieldset>
+
+            <fieldset id="material-select">
+                <legend>Material</legend>
+                <input type="radio" name="material" value="wood"><label for="">Wood</label>
+                <input type="radio" name="material" value="gum"><label for="">Gum</label>
+            </fieldset>
+            <input type="submit">
         </fieldset>
 
-        <fieldset>
-            <legend>Eraser</legend>
-            <input type="radio"><label for="">Yes</label>
-            <input type="radio"><label for="">No</label>
-        </fieldset>
-        <fieldset>
-            <legend>Material</legend>
-            <input type="radio"><label for="">Wood</label>
-            <input type="radio"><label for="">Gum</label>
-        </fieldset>
-        <input type="submit">
     </form>
 
     <table border="0">
@@ -51,4 +58,5 @@
         </tbody>
     </table>
 </body>
+
 </html>
