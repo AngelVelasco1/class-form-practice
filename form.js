@@ -1,6 +1,6 @@
 class Pencil {
     #defaultBrand
-    constructor({ color = "#ffffff", size = 20, eraser = true, material = "gum", brand = "Norma" }) {
+    constructor({ color = "#505fff", size = 20, eraser = true, material = "gum", brand = "Norma" }) {
         this.defaultColor = color;
         this.defaultSize = size;
         this.defaultEraser = eraser;
@@ -47,7 +47,7 @@ let brandInput = brandFieldset.querySelector(`input[value= "${defaultBrand}"]`);
 
 
 /* DOM Loaded */
-addEventListener("DOMContentLoaded", (e) => {
+addEventListener("DOMContentLoaded", () => {
     defaultPencil = new Pencil({});
 
     color.value = defaultPencil.color;
@@ -57,3 +57,33 @@ addEventListener("DOMContentLoaded", (e) => {
     brandInput.checked = true;
 
 })
+
+/*  */
+const form = document.querySelector("#form");
+const tbody = document.querySelector("#table tbody");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const colorData = formData.get("color");
+    const sizeData = formData.get("size");
+    const eraserData = formData.get("eraser");
+    const materialData = formData.get("material");
+    const brandData = formData.get("brand");
+
+    const pencil = new Pencil({color: colorData,size: sizeData,eraser: eraserData, material: materialData, brand: brandData });
+
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td>${pencil.color}</td>
+      <td>${pencil.size}</td>
+      <td>${pencil.brand}</td>
+      <td>${pencil.eraser}</td>
+      <td>${pencil.material}</td>
+    `;
+    tbody.appendChild(newRow);
+    console.log(pencil);
+})
+

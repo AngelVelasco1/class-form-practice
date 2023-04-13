@@ -1,6 +1,15 @@
 body {
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
     font-size: 1.05rem;
     font-family: 'Segoe UI';
+    margin: 0 auto;
+    padding: 5px;
+}
+* {
+    margin: 0 auto;
+    padding: 5px;
+}
+#form, #table {
+    width: 70%;
 }
