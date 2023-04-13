@@ -77,7 +77,7 @@ form.addEventListener("submit", (e) => {
 
     const newRow = document.createElement("tr");
     newRow.innerHTML = `
-      <td>${pencil.color}</td>
+      <td style= "background-color: ${pencil.color}">${pencil.color}</td>
       <td>${pencil.size}</td>
       <td>${pencil.brand}</td>
       <td>${pencil.eraser}</td>
