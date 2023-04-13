@@ -1,15 +1,85 @@
 body {
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-size: 1.05rem;
     font-family: 'Segoe UI';
     margin: 0 auto;
     padding: 5px;
+    background-image: url(background.svg);
+    background-position: center;
 }
 * {
-    margin: 0 auto;
-    padding: 5px;
+    padding:  6px;
+    margin: 0px 0px 10px 0px;
 }
 #form, #table {
-    width: 70%;
+    margin-block-start: 0.5%;;
+    margin-block-end: 80px;
+    width: 65%;
+   
 }
+fieldset {
+    border-radius: 6px;
+    border-color: black;
+
+}
+#main-legend {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #505fff
+}
+h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #505fff 
+}
+legend {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ff4f72;
+}
+#table {
+    border: 2px solid black
+}
+#table tr th:not(:nth-child(5)) {
+    border-right: 2px solid black
+}
+#table tbody {
+    text-align: center;
+}
+label {
+    color: #000000
+}
+#submit {
+    font-size: 16px;
+    cursor: pointer;
+    --hover-shadows: 8px 8px 22px #121212,
+                      -8px -8px 22px #303030;
+    --accent: fuchsia;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: #212121;
+    color: white;
+    padding: 1em 1.5em;
+    transition: box-shadow ease-in-out 0.3s,
+                background-color ease-in-out 0.1s,
+                letter-spacing ease-in-out 0.1s,
+                transform ease-in-out 0.1s;
+    --box-shadow: 7px 7px 6px #1c1c1c,
+                -7px -7px 6px #262626;
+   }
+   
+   #submit:hover {
+    box-shadow: var(--hover-shadows);
+   }
+   
+   #submit:active {
+    box-shadow: var(--hover-shadows),
+                 var(--accent) 0px 0px 30px 5px;
+    background-color: var(--accent);
+    transform: scale(0.95);
+   }
+   

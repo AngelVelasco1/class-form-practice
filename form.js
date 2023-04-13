@@ -58,7 +58,7 @@ addEventListener("DOMContentLoaded", () => {
 
 })
 
-/*  */
+/* Table Form Functionality */
 const form = document.querySelector("#form");
 const tbody = document.querySelector("#table tbody");
 

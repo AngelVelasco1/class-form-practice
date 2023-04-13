@@ -12,11 +12,12 @@
 
 <body>
     <form id="form">
-        <fieldset>
-            <legend>Pencil Class</legend>
-            <input type="color" name="color" placeholder="Pencil Color"><br>
+        <fieldset >
+            <legend id="main-legend">Pencil Class</legend>
+            <label for="">Color</label><br>
+            <input type="color" name="color" ><br>
 
-            <label for="">Size</label>
+            <label for="">Size</label><br>
             <input type="range" min="1" max="20" name="size">
 
             <fieldset id="brand-select">
@@ -42,8 +43,8 @@
         </fieldset>
 
     </form>
-
-    <table border="0" id="table">
+    <h2>Table Info </h2>
+    <table  id="table">
         <thead >
             <tr>
                 <th>Color</th>
